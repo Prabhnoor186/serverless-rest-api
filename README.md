@@ -3,20 +3,25 @@
 A fully serverless REST API built with AWS Lambda, API Gateway, and DynamoDB — provisioned entirely with Terraform.
 
 ## Architecture
-
-\\\
 Client (Postman / Frontend)
-        |
-        v
-  API Gateway          <- receives HTTP requests
-        |
-        v
-  AWS Lambda           <- runs business logic (Python 3.12)
-        |
-        v
-  DynamoDB             <- stores data (NoSQL)
-\\\
 
+|
+
+v
+
+API Gateway          <- receives HTTP requests
+
+|
+
+v
+
+AWS Lambda           <- runs business logic (Python 3.12)
+
+|
+
+v
+
+DynamoDB             <- stores data (NoSQL)
 ## Tech Stack
 
 | Service | Purpose |
@@ -37,38 +42,21 @@ Client (Postman / Frontend)
 | POST | /items | Create new item |
 | DELETE | /items/{id} | Delete item by ID |
 
-## Project Structure
-
-\\\
-rest-api/
-├── main.tf              # Provider and module config
-├── variables.tf         # Input variables
-├── outputs.tf           # Output values (API URL, Lambda ARN)
-├── lambda.tf            # Lambda function resource
-├── iam.tf               # IAM roles and policies
-├── api_gateway.tf       # API Gateway resources
-├── lambda/
-│   └── index.py         # Lambda handler (all 4 routes)
-└── modules/
-    └── dynamodb/
-        └── main.tf      # DynamoDB table
-\\\
-
 ## Deploy
 
-\\\ash
+```bash
 git clone https://github.com/Prabhnoor186/serverless-rest-api.git
 cd serverless-rest-api
 terraform init
 terraform plan
 terraform apply
-\\\
+```
 
 ## Destroy
 
-\\\ash
+```bash
 terraform destroy
-\\\
+```
 
 ## Key Design Decisions
 
