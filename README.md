@@ -3,25 +3,18 @@
 A fully serverless REST API built with AWS Lambda, API Gateway, and DynamoDB — provisioned entirely with Terraform.
 
 ## Architecture
+```
 Client (Postman / Frontend)
-
-|
-
-v
-
-API Gateway          <- receives HTTP requests
-
-|
-
-v
-
-AWS Lambda           <- runs business logic (Python 3.12)
-
-|
-
-v
-
-DynamoDB             <- stores data (NoSQL)
+        |
+        v
+  API Gateway          <- receives HTTP requests
+        |
+        v
+  AWS Lambda           <- runs business logic (Python 3.12)
+        |
+        v
+  DynamoDB             <- stores data (NoSQL)
+```
 ## Tech Stack
 
 | Service | Purpose |
